@@ -2,66 +2,56 @@ import React from "react";
 import { connect } from 'react-redux';
 import mapStateToProps from './selectors';
 import { changeLocationAction, changeThemeAction } from '../../../../app/actions';
-
+import Progress from '../../../../components/skillsBar/index';
 
 import {
-  About,
-  AboutContainer,
-  AboutTitle,
-  AboutContent,
-  PhotoContainer,
-  Photo,
-  InfoContainer,
-  InfoAboutMe,
-  PhotoWrapper,
-  InfoGreed,
-  ItemInfo,
-  ButtonContainer,
-  Button,
+  Skills,
+  SkillsContainer,
+  SkillsTitle,
+  SkillsWrapper
 } from './style';
 
 
 interface IProps {
-  translator(key: string): string;
-  changeLocationAction(): any;
-  changeThemeAction(): any;
-  theme: string;
+  translator(key: string): string,
+  changeLocationAction(): any,
+  changeThemeAction(): any,
+  theme: string,
   localization: string
 }
 
-const AboutSection:React.FC<IProps> = (props) => {
+type ISkills = Array<ISkillItem>
+
+interface ISkillItem {
+  type: string,
+  scale: number
+}
+
+const skills: ISkills = [
+  {type: 'HTML', scale: 90},
+  {type: 'CSS', scale: 80},
+  {type: 'JavaScript', scale: 78},
+  {type: 'React', scale: 76},
+  {type: 'Redux', scale: 89},
+  {type: 'TypeScript', scale: 65},
+]
+
+const SkillsSection:React.FC<IProps> = (props) => {
   const { theme, translator } = props;
   return(
-    <About id="about">
-        <AboutContainer theme={theme}>
-          <AboutTitle>{translator('menu:about')}</AboutTitle>
-          <AboutContent>
-            <PhotoWrapper>
-              <PhotoContainer theme={theme}>
-                <Photo/>
-              </PhotoContainer>
-            </PhotoWrapper>
-            <InfoContainer theme={theme}>
-              <InfoAboutMe theme={theme}>
-                Я начинающий JavaScript разработчик и имею большое желание развиваться в сфере фронтенда.
-                Oкончила курсы Front-end school Газпромбанка и активно занимаюсь самообразованием.
-              </InfoAboutMe>
-              <InfoGreed>
-                <ItemInfo>Имя:<span>{translator('info:first_name')}</span></ItemInfo>
-                <ItemInfo>Фамилия:<span>{translator('info:last_name')}</span></ItemInfo>
-                <ItemInfo>День рождения:<span>15.06.1991</span></ItemInfo>
-                <ItemInfo>Адрес:<span>{translator('info:address')}</span></ItemInfo>
-                <ItemInfo>E-mail:<span>lelka-7770@yandex.ru</span></ItemInfo>
-                <ItemInfo>Телефон:<span>8-917-519-68-00</span></ItemInfo>
-              </InfoGreed>
-              <ButtonContainer>
-                <Button theme={theme} download href='#'>{translator('buttons:download')}</Button>
-              </ButtonContainer>
-            </InfoContainer>
-          </AboutContent>
-        </AboutContainer>
-    </About>
+    <Skills id="skills">
+      <SkillsWrapper theme={theme}>
+        <SkillsTitle>{translator('menu:skills')}</SkillsTitle>
+        <SkillsContainer theme={theme}>
+          { skills.map((skill) => {
+            return(
+              <Progress key={Math.random()} theme={theme} skill={skill} />
+              )
+          })}
+        </SkillsContainer>
+      </SkillsWrapper>
+    </Skills>
   )
 }
 
-export default connect(mapStateToProps, { changeLocationAction, changeThemeAction })(AboutSection);
+export default connect(mapStateToProps, { changeLocationAction, changeThemeAction })(SkillsSection);
