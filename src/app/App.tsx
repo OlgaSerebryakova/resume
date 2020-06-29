@@ -11,7 +11,7 @@ import MenuBurgerContainer from '../components/menu-burger'
 import MobileNav from '../components/mobile-nav';
 
 interface ImapStateToProps {
-  theme: string
+  theme: 'light' | 'dark'
 }
 
 const App: React.FC<ImapStateToProps> = (props) => {

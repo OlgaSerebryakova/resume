@@ -1,15 +1,19 @@
 import { InferActionsTypes } from '../store';
 import * as actions from './actions';
 
-const initState: any = {
+interface IInitState {
+  localization: 'ru' | 'en',
+  theme: 'light' | 'dark'
+}
+
+const initState: IInitState = {
   localization: 'ru',
   theme: 'light'
 };
 
-type initStateType = typeof initState;
 export type TAction = ReturnType<InferActionsTypes<typeof actions>>
 
-export default function applicationReducer(state = initState, action: TAction):initStateType {
+export default function applicationReducer(state = initState, action: TAction):IInitState {
   switch (action.type) {
     case 'APPLICATION_CHANGE_LOCALIZATION':
       return {
