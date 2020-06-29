@@ -3,11 +3,8 @@ import backhome from '../../assets/images/back-home.png';
 import backHomeSmall from '../../assets/images/back-home-small.png';
 import backdark from '../../assets/images/back-dark.png';
 import backDarkSmall from '../../assets/images/back-dark-small.png';
-
-interface IButtonProps {
-  isWhite: boolean
-
-}
+// import photo from '../../assets/images/photoMe.png';
+// import photo_small from '../../assets/images/photoMe_small.png';
 
 // const red = '#f30000';
 // const blue = '#00f';
@@ -24,10 +21,9 @@ export const Content = styled.div`
   background-size: cover;
   background-attachment: fixed; 
   background-color: #464646;
-  width: 100%;
-  height: 100%;
+  height: 100vh;
   position: relative;
-  padding: 7px;
+  padding-top: 7px;
  
   @media only screen and (max-width: 767px) {
     background-image: url(${(props) => props.theme === 'light' ? backHomeSmall : backDarkSmall});
@@ -49,7 +45,7 @@ export const ContainerTitle = styled.div`
   };
   
   @media only screen and (max-width: 350px) {
-    margin-left: 1vw;
+    margin-left: 3vw;
   };
 `;
 
@@ -64,30 +60,3 @@ export const LeftSideBar = styled.div`
   };
 
 `;
-
-export const Button = styled.div<IButtonProps>`
-  background: ${(props) => props.isWhite ? 'white' : 'black'};
-  color: ${(props) => props.isWhite ? 'black' : 'white'};
-  padding: 5px 10px;
-  cursor: pointer;
-  user-select: none;
-`;
-
-export const About = styled.div`
-  width: 100%;
-  height: 2000px;
-`;
-
-export const AboutContainer = styled.div`
-  background-image: url(${(props) => props.theme === 'light' ? backdark : backhome});
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed; 
-  background-color: #464646;
-  width: 100%;
-  height: 100%;
-`;
-
-
-

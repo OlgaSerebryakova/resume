@@ -4,14 +4,16 @@ import mapStateToProps from './selectors';
 import { changeLocationAction, changeThemeAction } from '../../app/actions';
 import Title from '../../components/title';
 import SideBar from  '../../components/side-bar';
+import About from './sections/about/index';
+import Experience from './sections/experience/index';
+import Skills from './sections/skills/index';
+import Contacts from './sections/contacts/index';
 
 import {
   PageWrapper,
   Content,
   ContainerTitle,
   LeftSideBar,
-  About,
-  AboutContainer
 } from './style';
 
 
@@ -25,30 +27,31 @@ interface IProps {
 }
 
 const Main:React.FC<IProps> = (props) => {
-
+  const { theme, translator, localization } = props;
   return(
     <PageWrapper>
-      <Content theme={props.theme} id="main">
+      <Content theme={theme} id="main">
         <ContainerTitle>
           <Title
-            theme={props.theme}
-            phrases={[props.translator('title:name'), props.translator('title:frontentDeveloper')]}
-            titleHead={props.translator('title:head')}
-            localization={props.localization}
-            titleHello={props.translator('title:hello')}
+            theme={theme}
+            phrases={[translator('title:name'), translator('title:frontendDeveloper')]}
+            titleHead={translator('title:head')}
+            localization={localization}
+            titleHello={translator('title:hello')}
           />
         </ContainerTitle>
         <LeftSideBar>
           <SideBar onClickTheme={props.changeThemeAction}
-                   theme={props.theme}
+                   theme={theme}
                    onClickChangeLocation={props.changeLocationAction}
-                   translateIconLocation={props.translator('icon:location')}
+                   translateIconLocation={translator('icon:location')}
                    direction={'column'}/>
         </LeftSideBar>
       </Content>
-      <About id="about">
-        <AboutContainer theme={props.theme} />
-      </About>
+      <About/>
+      <Experience />
+      <Skills />
+      <Contacts />
     </PageWrapper>
   )
 }
