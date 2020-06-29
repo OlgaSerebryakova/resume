@@ -95,7 +95,7 @@ const dictionary: IDictionary = {
       hello: 'Hello!',
       head: "I'm",
       name: 'Olga Serebryakova',
-      frontentDeveloper: 'a frontend developer'
+      frontendDeveloper: 'a frontend developer'
     },
     info: {
       title_first_name: 'First name',
