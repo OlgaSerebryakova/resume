@@ -4,6 +4,7 @@ import thunk from "redux-thunk";
 import { connectRouter, routerMiddleware} from 'connected-react-router';
 import { history } from './history'
 import applicationReducer from './app/reducer';
+import aboutReducer from "./pages/main/sections/about/reducer";
 
 const logger = createLogger({
   collapsed: true
@@ -11,7 +12,8 @@ const logger = createLogger({
 
 const rootReducer =  combineReducers({
   router: connectRouter(history),
-  applicationReducer
+  applicationReducer,
+  aboutReducer
 });
 
 const routerMiddle = routerMiddleware(history);
