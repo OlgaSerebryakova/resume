@@ -52,17 +52,17 @@ const MobileNav:React.FC<IProps>  = (props) => {
           <BoxHidden theme={theme}/>
         </MenuItem>
         <MenuItem>
-          <StyledLink theme={theme} href="#about">{props.translator('menu:skills')}</StyledLink>
+          <StyledLink theme={theme} href="#skills">{props.translator('menu:skills')}</StyledLink>
           <BoxHidden theme={theme}/>
         </MenuItem>
         <MenuItem>
-          <StyledLink theme={theme} href="#about">{props.translator('menu:contact')}</StyledLink>
+          <StyledLink theme={theme} href="#contacts">{props.translator('menu:contact')}</StyledLink>
           <BoxHidden theme={theme}/>
         </MenuItem>
-        <MenuItem>
-          <StyledLink theme={theme} href="#about">{props.translator('menu:components')}</StyledLink>
-          <BoxHidden theme={theme}/>
-        </MenuItem>
+        {/*<MenuItem>*/}
+        {/*  <StyledLink theme={theme} href="#about">{props.translator('menu:components')}</StyledLink>*/}
+        {/*  <BoxHidden theme={theme}/>*/}
+        {/*</MenuItem>*/}
       </MenuWrapper>
       <BottomSideBar>
         <SideBar onClickTheme={props.changeThemeAction}
