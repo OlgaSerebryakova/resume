@@ -29,10 +29,11 @@ const SideBar:React.FC<IProps> = (props) => {
           {props.theme === 'light' ? <HalfMoon size={36}/> : <Sun size={36}/>}
         </IconWrapper>
       </ThemeContainer>
-      <LocationContainer onClick={props.onClickChangeLocation}>{props.translateIconLocation}</LocationContainer>
+      <LocationContainer theme={props.theme} onClick={props.onClickChangeLocation}>{props.translateIconLocation}</LocationContainer>
     </WrapperSideBar>
   )
 }
 
 export default SideBar
 
+src/components/side-bar

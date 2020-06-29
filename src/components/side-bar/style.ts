@@ -24,7 +24,7 @@ export const LocationContainer = styled.div`
   &:hover {
     background: #E9DFEC;
     box-shadow: 0 0 10px rgb(196, 200, 252,0.5);
-    color: #2E2999;
+    color: ${(props) => props.theme === 'light' ? '#2E2999' : '#053649' };
   }
 `;
 
