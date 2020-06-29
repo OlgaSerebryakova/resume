@@ -31,20 +31,6 @@ const dictionary: IDictionary = {
       name: 'Ольга Серебрякова',
       frontendDeveloper: 'frontend разработчик'
     },
-    info: {
-      title_first_name: 'Имя',
-      title_last_name: 'Фамилия',
-      title_address: ' Адрес',
-      title_birthday: 'День рождения',
-      title_email: 'E-mail',
-      title_tel: 'Телефон',
-      first_name: 'Ольга',
-      last_name: 'Серебрякова',
-      address: 'Москва',
-      birthday: '15.06.1991',
-      tel: '8-917-519-68-00',
-      email: 'lelka-7770@yandex.ru'
-    },
     experience: {
       title: 'Опыт работы и образование',
       experiencePlace_Gazprom: 'Газпромбанк',
@@ -72,7 +58,10 @@ const dictionary: IDictionary = {
     },
     contacts: {
       text: `У вас возникли вопросы, предложения или вы просто хотите сказать Привет..
-Вы можете позвонить мне или отправть сообщение и я отвечу Вам в ближайшее время.`
+Вы можете позвонить мне или отправть сообщение и я отвечу Вам в ближайшее время.`,
+      title_address: 'Адресс',
+      address: 'Москва',
+      title_tel: 'Телефон'
     }
   },
   en: {
@@ -96,20 +85,6 @@ const dictionary: IDictionary = {
       head: "I'm",
       name: 'Olga Serebryakova',
       frontendDeveloper: 'a frontend developer'
-    },
-    info: {
-      title_first_name: 'First name',
-      title_last_name: 'Last name',
-      title_address: 'Address',
-      title_birthday: 'Birthday',
-      title_email: 'E-mail',
-      title_tel: 'Telephone',
-      first_name: 'Olga',
-      last_name: 'Serebryakova',
-      address: 'Moscow',
-      birthday: '15.06.1991',
-      tel: '8-917-519-68-00',
-      email: 'lelka-7770@yandex.ru'
     },
     experience: {
       title: 'Experience & Education ',
@@ -138,7 +113,10 @@ Accounting, analysis and audit`,
     },
     contacts: {
       text: `If you have any suggestion, question or even you want to say Hello.. 
-Please you can call me or push me a message and I will reply you shortly.`
+Please you can call me or push me a message and I will reply you shortly.`,
+      title_address: 'Address',
+      address: 'Moscow',
+      title_tel: 'Telephone'
     }
   }
 };

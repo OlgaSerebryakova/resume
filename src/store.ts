@@ -5,6 +5,7 @@ import { connectRouter, routerMiddleware} from 'connected-react-router';
 import { history } from './history'
 import applicationReducer from './app/reducer';
 import aboutReducer from "./pages/main/sections/about/reducer";
+import experienceReducer from "./pages/main/sections/experience/reducer";
 
 const logger = createLogger({
   collapsed: true
@@ -13,7 +14,8 @@ const logger = createLogger({
 const rootReducer =  combineReducers({
   router: connectRouter(history),
   applicationReducer,
-  aboutReducer
+  aboutReducer,
+  experienceReducer
 });
 
 const routerMiddle = routerMiddleware(history);

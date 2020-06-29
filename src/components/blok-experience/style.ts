@@ -129,34 +129,30 @@ export const ItemTineLine = styled.li`
 export const ItemText = styled.div`
   white-space: pre-wrap;
   color: ${props => props.theme === 'light' ? '#2E2999' : 'white'};
-  
-  h3 {
-    font-size: 18px;
+`;
+
+export const Place = styled.h3`
+  font-size: 18px;
+  @media only screen and (max-width: 500px) {
+    font-size: 13px;
   }
-  
-  h4 {
-    font-size: 16px;
-  }
-  
-  p {
-    font-size: 16px;
-    line-height: 1.5rem;
-  }
+`;
+
+export const Date = styled.h4`
+  font-size: 16px;
+  text-transform: capitalize;
   
   @media only screen and (max-width: 500px) {
-    h3 {
-        font-size: 13px;
-    }
-  
-    h4 {
-     font-size: 12px;
-    }
-      
-    p {
-      font-size: 12px;
-      line-height: 1rem;
-    }
-  };
+    font-size: 12px;
+  }
+`;
+
+export const Text = styled.p`
+  font-size: 16px;
+  line-height: 1.5rem;
+  @media only screen and (max-width: 500px) {
+    font-size: 12px;
+  }
 `;
 
 

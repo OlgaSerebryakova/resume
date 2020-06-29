@@ -7,6 +7,9 @@ import {
   ItemTineLine,
   IconTimeline,
   ItemText,
+  Place,
+  Date,
+  Text
 } from './style';
 
 
@@ -27,9 +30,9 @@ const ItemExperience:React.FC<IProps> = (props) => {
         </IconTimeline>
         <ShowUpAnimation>
         <ItemText theme={theme}>
-          <h4>{props.experiencePlace}</h4>
-          <h5>{props.experienceDate}</h5>
-          <p>{props.experienceText}</p>
+          <Place>{props.experiencePlace}</Place>
+          <Date>{props.experienceDate}</Date>
+          <Text>{props.experienceText}</Text>
         </ItemText>
         </ShowUpAnimation>
       </ItemTineLine>

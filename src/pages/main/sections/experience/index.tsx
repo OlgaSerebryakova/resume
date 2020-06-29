@@ -12,55 +12,34 @@ import {
   Timeline,
 } from './style';
 
-
-
 interface IProps {
   translator(key: string): string;
   changeLocationAction(): any;
   changeThemeAction(): any;
   theme: string;
-  localization: string
+  localization: string,
+  experience: any
 }
 
 const ExperienceSection:React.FC<IProps> = (props) => {
-  const { theme, translator } = props;
+  const { theme, experience, localization } = props;
   return(
       <Experience>
         <ExperienceContainer>
           <ShowUpAnimation>
-            <ExperienceTitle>{translator('experience:title')}</ExperienceTitle>
+            <ExperienceTitle>{experience[localization].title}</ExperienceTitle>
           </ShowUpAnimation>
           <Timeline theme={theme}>
-            <ItemExperience
-              theme={theme}
-              iconType='job'
-              experiencePlace={translator('experience:experiencePlace_Gazprom')}
-              experienceDate={translator('experience:experienceDate_Gazprom')}
-              experienceText={translator('experience:experienceText_Gazprom')} />
-            <ItemExperience
-              theme={theme}
-              iconType='study'
-              experiencePlace={translator('experience:experiencePlace_Frontend_school')}
-              experienceDate={translator('experience:experienceDate_Frontend_school')}
-              experienceText={translator('experience:experienceText_Frontend_school')} />
-            <ItemExperience
-              theme={theme}
-              iconType='study'
-              experiencePlace={translator('experience:experiencePlace_JavaScript')}
-              experienceDate={translator('experience:experienceDate_JavaScript')}
-              experienceText={translator('experience:experienceText_JavaScript')} />
-            <ItemExperience
-              theme={theme}
-              iconType='study'
-              experiencePlace={translator('experience:experiencePlace_Rosneft')}
-              experienceDate={translator('experience:experienceDate_Rosneft')}
-              experienceText={translator('experience:experienceText_Rosneft')} />
-            <ItemExperience
-              theme={theme}
-              iconType='study'
-              experiencePlace={translator('experience:experiencePlace_MESI')}
-              experienceDate={translator('experience:experienceDate_MESI')}
-              experienceText={translator('experience:experienceText_MESI')} />
+            {experience[localization].experience.map((item: any) => {
+              return(
+                <ItemExperience
+                  theme={theme}
+                  iconType={item.iconType}
+                  experiencePlace={item.place}
+                  experienceDate={item.date}
+                  experienceText={item.text} />
+              )
+            })}
           </Timeline>
         </ExperienceContainer>
       </Experience>
