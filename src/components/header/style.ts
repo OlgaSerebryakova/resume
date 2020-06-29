@@ -1,5 +1,4 @@
 import styled, {keyframes} from "styled-components";
-import { Link } from 'react-router-dom';
 
 interface IMenuContainerProps {
   theme: string,
@@ -50,7 +49,7 @@ interface LinkProps {
 export const StyledLink = styled.a<LinkProps>`
    text-decoration: none;
    font-weight: 500;
-   font-size: 20px;
+   font-size: 25px;
    color: ${(props) => props.theme === 'light' ? '#605DCD' : '#053649'};
    
    :visited, :active {
@@ -58,10 +57,6 @@ export const StyledLink = styled.a<LinkProps>`
    };
    
    @media only screen and (min-width: 1800px) {
-      font-size: 30px;
-   };
-   
-   @media only screen and (max-width: 1024px) {
       font-size: 30px;
    };
 `;
@@ -79,6 +74,6 @@ export const IconWrapper = styled.div`
   svg {
     fill:  ${(props) => props.theme === 'light' ? '#2E2999' : '#C6FEFF'}; 
   }
-  animation: ${rotation} 2s linear 2; 
+  animation: ${rotation} 0.4s linear 2; 
   transform-origin: 50% 50%;
 `;

@@ -1,19 +1,20 @@
 import React, {useEffect, useState} from "react";
 import { connect } from 'react-redux';
 import mapStateToProps from './selectors';
-import { MenuContainer,
+import {
+  MenuContainer,
   MenuItem,
   StyledLink,
   IconWrapper
 } from './style';
 import Diamond from "../../assets/icons/diamond";
 
-interface IProps {
+interface IMapStateToProps {
   translator: (key: string) => string,
-  theme: string
+  theme: 'light' | 'dark'
 }
 
-const Header:React.FC<IProps> = (props: IProps) => {
+const Header:React.FC<IMapStateToProps> = (props) => {
 
   const [isFixedHeader, setFixedHeader]  = useState(false)
 
@@ -21,8 +22,8 @@ const Header:React.FC<IProps> = (props: IProps) => {
     const onScroll = () => {
       const windowScrollTop = document.documentElement.getBoundingClientRect().top;
 
-      if (windowScrollTop < -document.documentElement.clientHeight) {
-        setFixedHeader(true)
+      if (windowScrollTop < -600) {
+        setFixedHeader(true);
       } else {
         setFixedHeader(false)
       }
@@ -40,8 +41,8 @@ const Header:React.FC<IProps> = (props: IProps) => {
       <IconWrapper theme={props.theme}>
         <Diamond size={50} />
       </IconWrapper>
-      <MenuItem><StyledLink theme={props.theme} href="#about">{props.translator('menu:skills')}</StyledLink></MenuItem>
-      <MenuItem><StyledLink theme={props.theme} href="#about">{props.translator('menu:contact')}</StyledLink></MenuItem>
+      <MenuItem><StyledLink theme={props.theme} href="#skills">{props.translator('menu:skills')}</StyledLink></MenuItem>
+      <MenuItem><StyledLink theme={props.theme} href="#contacts">{props.translator('menu:contact')}</StyledLink></MenuItem>
       {/*<MenuItem><StyledLink theme={props.theme} to="#/about">{props.translator('menu:components')}</StyledLink></MenuItem>*/}
     </MenuContainer>
   )
