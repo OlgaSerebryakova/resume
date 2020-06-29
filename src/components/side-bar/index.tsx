@@ -37,3 +37,6 @@ const SideBar:React.FC<IProps> = (props) => {
 export default SideBar
 
 src/components/side-bar
+src/components/showUpAnimation
+
+src/components/mobile-nav
