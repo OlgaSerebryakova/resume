@@ -1,44 +1,20 @@
 import React from "react";
 import { connect } from 'react-redux';
 import mapStateToProps from './selectors';
-import { changeLocationAction, changeThemeAction } from '../../app/actions';
-import Title from '../../components/title';
-import SideBar from  '../../components/side-bar';
-import Sun from '../../assets/icons/sun';
-import AboutSection from './sections/about/index';
-
+import { changeLocationAction, changeThemeAction } from '../../../../app/actions';
+import ItemExperience from '../../../../components/blok-experience/index';
+import ShowUpAnimation from "../../../../components/showUpAnimation";
 
 import {
-  PageWrapper,
-  Content,
-  ContainerTitle,
-  LeftSideBar,
-  About,
-  AboutContainer,
-  AboutTitle,
-  AboutContent,
-  PhotoContainer,
-  Photo,
-  InfoContainer,
-  InfoAboutMe,
-  PhotoWrapper,
-  InfoGreed,
-  ItemInfo,
-  ButtonContainer,
-  Button,
   Experience,
   ExperienceContainer,
   ExperienceTitle,
   Timeline,
-  ItemTineLine,
-  IconTimeline,
-  ItemText,
-  ItemTextTitle
 } from './style';
 
 
+
 interface IProps {
-  isMobile?: boolean;
   translator(key: string): string;
   changeLocationAction(): any;
   changeThemeAction(): any;
@@ -46,47 +22,49 @@ interface IProps {
   localization: string
 }
 
-const Main:React.FC<IProps> = (props) => {
-  const { theme, translator, localization } = props;
+const ExperienceSection:React.FC<IProps> = (props) => {
+  const { theme, translator } = props;
   return(
-    <PageWrapper>
-      <Content theme={theme} id="main">
-        <ContainerTitle>
-          <Title
-            theme={theme}
-            phrases={[translator('title:name'), translator('title:frontentDeveloper')]}
-            titleHead={translator('title:head')}
-            localization={localization}
-            titleHello={translator('title:hello')}
-          />
-        </ContainerTitle>
-        <LeftSideBar>
-          <SideBar onClickTheme={props.changeThemeAction}
-                   theme={theme}
-                   onClickChangeLocation={props.changeLocationAction}
-                   translateIconLocation={translator('icon:location')}
-                   direction={'column'}/>
-        </LeftSideBar>
-      </Content>
-      <AboutSection/>
       <Experience>
         <ExperienceContainer>
-          <ExperienceTitle>{translator('experience:title')}</ExperienceTitle>
+          <ShowUpAnimation>
+            <ExperienceTitle>{translator('experience:title')}</ExperienceTitle>
+          </ShowUpAnimation>
           <Timeline theme={theme}>
-            <ItemTineLine>
-              <IconTimeline theme={theme}>
-                <Sun size={40}/>
-              </IconTimeline>
-              <ItemText>
-                <ItemTextTitle>МЭСИ</ItemTextTitle>
-              </ItemText>
-            </ItemTineLine>
+            <ItemExperience
+              theme={theme}
+              iconType='job'
+              experiencePlace={translator('experience:experiencePlace_Gazprom')}
+              experienceDate={translator('experience:experienceDate_Gazprom')}
+              experienceText={translator('experience:experienceText_Gazprom')} />
+            <ItemExperience
+              theme={theme}
+              iconType='study'
+              experiencePlace={translator('experience:experiencePlace_Frontend_school')}
+              experienceDate={translator('experience:experienceDate_Frontend_school')}
+              experienceText={translator('experience:experienceText_Frontend_school')} />
+            <ItemExperience
+              theme={theme}
+              iconType='study'
+              experiencePlace={translator('experience:experiencePlace_JavaScript')}
+              experienceDate={translator('experience:experienceDate_JavaScript')}
+              experienceText={translator('experience:experienceText_JavaScript')} />
+            <ItemExperience
+              theme={theme}
+              iconType='study'
+              experiencePlace={translator('experience:experiencePlace_Rosneft')}
+              experienceDate={translator('experience:experienceDate_Rosneft')}
+              experienceText={translator('experience:experienceText_Rosneft')} />
+            <ItemExperience
+              theme={theme}
+              iconType='study'
+              experiencePlace={translator('experience:experiencePlace_MESI')}
+              experienceDate={translator('experience:experienceDate_MESI')}
+              experienceText={translator('experience:experienceText_MESI')} />
           </Timeline>
         </ExperienceContainer>
       </Experience>
-
-    </PageWrapper>
   )
 }
 
-export default connect(mapStateToProps, { changeLocationAction, changeThemeAction })(Main);
+export default connect(mapStateToProps, { changeLocationAction, changeThemeAction })(ExperienceSection);
