@@ -56,7 +56,7 @@ const ContactsSection:React.FC<IProps> = (props) => {
                     <Phone size={40} />
                   </ContactIcon>
                   <ContactLink href='tel:+ 79175196800'>8-917-519-68-00</ContactLink>
-                  <h4>{translator('info:title_tel')}</h4>
+                  <h4>{translator('contacts:title_tel')}</h4>
                 </ContactItem>
               </ShowUpAnimation>
               <ShowUpAnimation>
@@ -73,8 +73,8 @@ const ContactsSection:React.FC<IProps> = (props) => {
                   <ContactIcon theme={theme}>
                     <Map size={40} />
                   </ContactIcon>
-                  <ContactLink>{translator('info:address')}</ContactLink>
-                  <h4>{translator('info:title_address')}</h4>
+                  <ContactLink>{translator('contacts:address')}</ContactLink>
+                  <h4>{translator('contacts:title_address')}</h4>
                 </ContactItem>
               </ShowUpAnimation>
             </BoxContacts>
@@ -100,7 +100,9 @@ const ContactsSection:React.FC<IProps> = (props) => {
           </ShowUpAnimation>
         </ContactsContainer>
         <Footer>
+          <ShowUpAnimation>
           <h4>{`© ${new Date().getFullYear()} Olga Serebryakova`}</h4>
+          </ShowUpAnimation>
         </Footer>
     </Contacts>
   )
