@@ -6,6 +6,7 @@ import { history } from './history'
 import applicationReducer from './app/reducer';
 import aboutReducer from "./pages/main/sections/about/reducer";
 import experienceReducer from "./pages/main/sections/experience/reducer";
+import skillsReducer from "./pages/main/sections/skills/reducer";
 
 const logger = createLogger({
   collapsed: true
@@ -15,7 +16,8 @@ const rootReducer =  combineReducers({
   router: connectRouter(history),
   applicationReducer,
   aboutReducer,
-  experienceReducer
+  experienceReducer,
+  skillsReducer
 });
 
 const routerMiddle = routerMiddleware(history);
