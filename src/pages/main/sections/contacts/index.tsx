@@ -27,18 +27,15 @@ import {
   Footer
 } from './style';
 
-
-
 interface IProps {
-  translator(key: string): string;
-  changeLocationAction(): any;
-  changeThemeAction(): any;
-  theme: string;
-  localization: string
+  translator(key: string): string,
+  theme: string,
+  localization: string,
+  contacts: any
 }
 
 const ContactsSection:React.FC<IProps> = (props) => {
-  const { theme, translator } = props;
+  const { theme, translator, contacts, localization } = props;
   return(
     <Contacts id="contacts">
         <ContactsContainer theme={theme}>
@@ -47,7 +44,7 @@ const ContactsSection:React.FC<IProps> = (props) => {
           </ShowUpAnimation>
           <ContactsContent>
             <ShowUpAnimation>
-              <TextForContact>{translator('contacts:text')}</TextForContact>
+              <TextForContact>{contacts[localization].text}</TextForContact>
             </ShowUpAnimation>
             <BoxContacts>
               <ShowUpAnimation>
@@ -56,7 +53,7 @@ const ContactsSection:React.FC<IProps> = (props) => {
                     <Phone size={40} />
                   </ContactIcon>
                   <ContactLink href='tel:+ 79175196800'>8-917-519-68-00</ContactLink>
-                  <h4>{translator('contacts:title_tel')}</h4>
+                  <h4>{contacts[localization].title_tel}</h4>
                 </ContactItem>
               </ShowUpAnimation>
               <ShowUpAnimation>
@@ -73,8 +70,8 @@ const ContactsSection:React.FC<IProps> = (props) => {
                   <ContactIcon theme={theme}>
                     <Map size={40} />
                   </ContactIcon>
-                  <ContactLink>{translator('contacts:address')}</ContactLink>
-                  <h4>{translator('contacts:title_address')}</h4>
+                  <ContactLink>{contacts[localization].address}</ContactLink>
+                  <h4>{contacts[localization].title_address}</h4>
                 </ContactItem>
               </ShowUpAnimation>
             </BoxContacts>

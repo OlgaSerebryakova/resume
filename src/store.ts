@@ -7,6 +7,7 @@ import applicationReducer from './app/reducer';
 import aboutReducer from "./pages/main/sections/about/reducer";
 import experienceReducer from "./pages/main/sections/experience/reducer";
 import skillsReducer from "./pages/main/sections/skills/reducer";
+import contactsReducer from "./pages/main/sections/contacts/reducer";
 
 const logger = createLogger({
   collapsed: true
@@ -17,7 +18,8 @@ const rootReducer =  combineReducers({
   applicationReducer,
   aboutReducer,
   experienceReducer,
-  skillsReducer
+  skillsReducer,
+  contactsReducer
 });
 
 const routerMiddle = routerMiddleware(history);
