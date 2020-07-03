@@ -18,26 +18,26 @@ import {
 
 
 interface IProps {
-  isMobile?: boolean;
   translator(key: string): string;
   changeLocationAction(): any;
   changeThemeAction(): any;
   theme: string;
-  localization: string
+  localization: string,
+  main: any
 }
 
 const Main:React.FC<IProps> = (props) => {
-  const { theme, translator, localization } = props;
+  const { theme, translator, localization, main } = props;
   return(
     <PageWrapper>
       <Content theme={theme} id="main">
         <ContainerTitle>
           <Title
             theme={theme}
-            phrases={[translator('title:name'), translator('title:frontendDeveloper')]}
-            titleHead={translator('title:head')}
+            phrases={[main[localization].title.name, main[localization].title.frontendDeveloper]}
+            titleHead={main[localization].title.head}
             localization={localization}
-            titleHello={translator('title:hello')}
+            titleHello={main[localization].title.hello}
           />
         </ContainerTitle>
         <LeftSideBar>

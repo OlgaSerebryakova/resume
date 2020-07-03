@@ -8,6 +8,7 @@ import aboutReducer from "./pages/main/sections/about/reducer";
 import experienceReducer from "./pages/main/sections/experience/reducer";
 import skillsReducer from "./pages/main/sections/skills/reducer";
 import contactsReducer from "./pages/main/sections/contacts/reducer";
+import mainReducer from "./pages/main/reducer";
 
 const logger = createLogger({
   collapsed: true
@@ -16,6 +17,7 @@ const logger = createLogger({
 const rootReducer =  combineReducers({
   router: connectRouter(history),
   applicationReducer,
+  mainReducer,
   aboutReducer,
   experienceReducer,
   skillsReducer,

@@ -24,19 +24,6 @@ const dictionary: IDictionary = {
       skills: 'Навыки',
       contact: 'Контакты',
       components: 'Компоненты'
-    },
-    title: {
-      hello: 'Привет!',
-      head: 'Я',
-      name: 'Ольга Серебрякова',
-      frontendDeveloper: 'frontend разработчик'
-    },
-    contacts: {
-      text: `У вас возникли вопросы, предложения или вы просто хотите сказать Привет..
-Вы можете позвонить мне или отправть сообщение и я отвечу Вам в ближайшее время.`,
-      title_address: 'Адресс',
-      address: 'Москва',
-      title_tel: 'Телефон'
     }
   },
   en: {
@@ -54,19 +41,6 @@ const dictionary: IDictionary = {
       skills: 'Skills',
       contact: 'Contact',
       components: 'Components'
-    },
-    title: {
-      hello: 'Hello!',
-      head: "I'm",
-      name: 'Olga Serebryakova',
-      frontendDeveloper: 'a frontend developer'
-    },
-    contacts: {
-      text: `If you have any suggestion, question or even you want to say Hello.. 
-Please you can call me or push me a message and I will reply you shortly.`,
-      title_address: 'Address',
-      address: 'Moscow',
-      title_tel: 'Telephone'
     }
   }
 };

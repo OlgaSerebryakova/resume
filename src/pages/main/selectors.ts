@@ -5,6 +5,7 @@ export default function mapStateToProps(state: AppStateType) {
   return {
     translator: translateSelector(state.applicationReducer.localization),
     theme: state.applicationReducer.theme,
-    localization: state.applicationReducer.localization
+    localization: state.applicationReducer.localization,
+    main: state.mainReducer
   }
 }
