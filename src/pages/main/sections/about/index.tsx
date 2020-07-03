@@ -33,7 +33,7 @@ interface IProps {
 }
 
 const AboutSection:React.FC<IProps> = (props) => {
-  const { theme, translator, transfer, about } = props;
+  const { theme, translator, about } = props;
 
   return(
     <About id="about">
@@ -57,7 +57,7 @@ const AboutSection:React.FC<IProps> = (props) => {
                 <InfoGrid>
                   {about[props.localization].info.map((infoItem: any) => {
                     return (
-                      <ItemInfo>{infoItem.title}:<span>{infoItem.content}</span></ItemInfo>
+                      <ItemInfo key={Math.random()}>{infoItem.title}:<span>{infoItem.content}</span></ItemInfo>
                     )
                   })}
                 </InfoGrid>

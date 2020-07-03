@@ -33,6 +33,7 @@ const ExperienceSection:React.FC<IProps> = (props) => {
             {experience[localization].experience.map((item: any) => {
               return(
                 <ItemExperience
+                  key={Math.random()}
                   theme={theme}
                   iconType={item.iconType}
                   experiencePlace={item.place}
